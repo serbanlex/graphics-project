@@ -1,0 +1,410 @@
+% IEEE Conference/Journal Style LaTeX Document
+% For use with Overleaf - https://www.overleaf.com
+% ============================================
+
+\documentclass[conference]{IEEEtran}
+
+% ============================================
+% PACKAGES
+% ============================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{float}
+
+% TODO note styling - elegant blue boxes
+\newcommand{\todo}[1]{\textcolor{blue}{\small\textit{(To be completed: #1)}}}
+
+% Hyperlink styling
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    citecolor=blue,
+    pdftitle={The Hero in Four Worlds - AI Visual Storytelling},
+    pdfauthor={UPT Student}
+}
+
+% Code listing style for prompts
+\lstdefinestyle{promptstyle}{
+    backgroundcolor=\color{gray!10},
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    frame=single,
+    framerule=0pt,
+    xleftmargin=0.5em,
+    xrightmargin=0.5em
+}
+
+% ============================================
+% DOCUMENT START
+% ============================================
+\begin{document}
+
+% ============================================
+% TITLE
+% ============================================
+\title{The Hero in Four Worlds:\\AI-Powered Visual Storytelling with Consistent Character Design}
+
+\author{
+    \IEEEauthorblockN{[Your Name]}
+    \IEEEauthorblockA{
+        Master's Program: [Your Specialization]\\
+        Politehnica University Timișoara\\
+        Course: Graphics Processing Systems\\
+        Supervisor: As.Drd.Ing. Bianca Gușiță\\
+        January 2026
+    }
+}
+
+\maketitle
+
+% ============================================
+% ABSTRACT
+% ============================================
+\begin{abstract}
+This project explores the creative potential of modern AI image generation tools through the theme ``The Hero in Four Worlds'' — placing a consistent character across four dramatically different environments: a tropical jungle, a medieval town, a futuristic city, and a desert landscape. Using a combination of Seedream 4.5 \cite{seedream}, Nano Banana \cite{nanobanana}, and Flux Kontext \cite{fluxkontext}, we demonstrate a practical workflow for generating visually cohesive narratives while maintaining character consistency. The project evaluates each tool's strengths and weaknesses in terms of image quality, generation speed, creative flexibility, and consistency preservation. Results show that combining multiple specialized AI tools produces superior outcomes compared to using a single tool, with each platform excelling at different stages of the creative pipeline.
+\end{abstract}
+
+% ============================================
+% KEYWORDS
+% ============================================
+\begin{IEEEkeywords}
+AI image generation, character consistency, visual storytelling, Seedream, Nano Banana, Flux Kontext, generative AI
+\end{IEEEkeywords}
+
+% ============================================
+% 1. INTRODUCTION
+% ============================================
+\section{Introduction}
+
+\subsection{Project Theme}
+
+This project explores the theme \textbf{``The Hero in Four Worlds''} — creating a consistent character placed across four dramatically different environments:
+
+\begin{enumerate}
+    \item \textbf{Jungle} — Dense tropical vegetation, wildlife, natural lighting
+    \item \textbf{Medieval Town} — Historical architecture, cobblestone streets, period-appropriate atmosphere
+    \item \textbf{Futuristic City} — Neon lights, advanced technology, cyberpunk aesthetics
+    \item \textbf{Desert} — Arid landscape, harsh sunlight, sand dunes and oasis
+\end{enumerate}
+
+\subsection{Purpose of the Project}
+
+This theme was chosen to test the capabilities of modern AI image generation tools in maintaining character consistency across vastly different environmental contexts. The challenge lies in placing the same hero character in four visually distinct worlds while preserving their identity, clothing, and features. This project demonstrates the practical workflow of combining multiple AI tools for creative visual storytelling.
+
+\subsection{Objectives}
+
+The primary objectives of this project are:
+
+\begin{itemize}
+    \item Generate 4 distinct world environment landscapes using AI tools
+    \item Generate a consistent hero character design using AI image generation tools
+    \item Place the character in 4 distinct world environments (7-10 total images)
+    \item Evaluate and compare the performance of Seedream 4.5, Nano Banana, and Flux Kontext
+    \item Document the creative workflow and analyze tool strengths/weaknesses
+    \item Create a compelling visual narrative across all four worlds
+\end{itemize}
+
+% ============================================
+% 2. TOOLS OVERVIEW
+% ============================================
+\section{Tools Overview}
+
+This section describes the AI tools used in this project, their capabilities, and their specific roles in the creative workflow.
+
+\subsection{Seedream 4.5 (ByteDance)}
+
+\textbf{Official Website:} \url{https://seed.bytedance.com/en/seedream4_0}\\
+\textbf{Access Platform:} \url{https://lovart.ai} (Seedream 4.5 integration) \cite{lovart}
+
+\subsubsection{Description}
+Seedream 4.5 is ByteDance's advanced AI image generation model, known for producing high-resolution, photorealistic images with excellent detail and composition. It excels at generating complex scenes with multiple elements, dramatic lighting, and cinematic compositions. The model responds well to structured prompts following the formula: Subject + Environment + Style + Technical Specs.
+
+\subsubsection{Role in Project}
+Used as the primary tool for generating all four world landscape backgrounds (Jungle, Desert, Medieval Town, Futuristic City). Seedream 4.5 was chosen for its ability to create detailed, high-resolution environments in 16:9 landscape format suitable for desktop wallpaper quality.
+
+\subsection{Nano Banana}
+
+\textbf{Website:} \url{https://nanobanana.ai/}
+
+\subsubsection{Description}
+Nano Banana is an AI-powered image editing platform specialized in maintaining character and object consistency across multiple images. It allows users to upload reference images and seamlessly insert consistent elements into new scenes.
+
+\subsubsection{Role in Project}
+Used for inserting the hero character into all four world landscapes while maintaining consistent appearance, clothing, and features across different environments. \todo{Update after using the tool}
+
+\subsection{Flux Kontext}
+
+\textbf{Website:} \url{https://flux-context.org/}
+
+\subsubsection{Description}
+Flux Kontext is a context-aware AI image editing tool that excels at making local, targeted edits to images while preserving the overall composition. It is particularly useful for fine adjustments, background modifications, and adding/removing specific details.
+
+\subsubsection{Role in Project}
+Used for final polish and context-aware edits such as lighting adjustments, adding environmental details, and fixing any artifacts from the character insertion process. \todo{Update after using the tool}
+
+\subsection{Additional Tools}
+
+\textbf{lovart.ai} — Web platform providing access to Seedream 4.5 with a user-friendly interface. Used as the primary access point for Seedream due to its intuitive controls and aspect ratio settings.
+
+% ============================================
+% 3. METHODOLOGY
+% ============================================
+\section{Methodology}
+
+\subsection{Workflow Overview}
+
+The project follows a three-phase approach: first generating all world landscapes, then creating a consistent hero character, and finally compositing the character into each world with refinements.
+
+\begin{figure}[H]
+\centering
+\fbox{
+\begin{minipage}{0.9\linewidth}
+\centering
+\texttt{SEEDREAM 4.5} $\rightarrow$ \texttt{NANO BANANA} $\rightarrow$ \texttt{FLUX KONTEXT}\\[0.5em]
+\small{World Landscapes} \hspace{1em} \small{Hero Insertion} \hspace{1em} \small{Final Polish}
+\end{minipage}
+}
+\caption{Three-phase workflow diagram}
+\label{fig:workflow}
+\end{figure}
+
+\textbf{Phase 1:} Generate all four world landscapes with designated ``hero spots'' — areas where the character will be placed later (stone pedestal in jungle, empty camel saddle in desert, etc.)
+
+\textbf{Phase 2:} Create the hero character reference and use Nano Banana to insert them consistently into each landscape.
+
+\textbf{Phase 3:} Use Flux Kontext for final adjustments, lighting fixes, and detail enhancement.
+
+\subsection{Order of Tools Used}
+
+Table~\ref{tab:toolorder} shows the sequential order in which tools were applied throughout the project.
+
+\begin{table}[H]
+\centering
+\caption{Tool Usage Order}
+\label{tab:toolorder}
+\begin{tabular}{|c|l|p{5cm}|}
+\hline
+\textbf{Step} & \textbf{Tool} & \textbf{Purpose} \\
+\hline
+1 & Seedream 4.5 & Generate 4 world landscape backgrounds \\
+2 & Seedream 4.5 & Create hero character reference image \\
+3 & Nano Banana & Insert hero with consistency across scenes \\
+4 & Flux Kontext & Final polish and detail adjustments \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Prompts Used}
+
+This section documents the prompts used for each generation, following the Seedream 4.5 best practices: Subject + Environment + Style + Technical Specs.
+
+\subsubsection{Hero Character Base Prompt}
+
+\todo{Insert hero character prompt after generation}
+
+\subsubsection{Jungle World Prompt}
+
+\begin{lstlisting}[style=promptstyle]
+Dense tropical jungle, lush green canopy with towering ancient trees, golden sunbeams piercing through the foliage creating god rays, volumetric lighting, a prominent mossy stone plateau in the center of a clearing bathed in sunlight, a majestic lion sitting beside the stone looking upward toward the top of the stone with curious attention, colorful parrots perched on branches, monkeys in the trees, a toucan with vibrant beak, butterflies floating in the light beams, misty atmosphere, rich vegetation with ferns and exotic flowers, wide panoramic view, landscape orientation, cinematic widescreen composition, photorealistic, 16:9 aspect ratio, 4K resolution, highly detailed
+\end{lstlisting}
+
+\subsubsection{Desert World Prompt}
+
+\begin{lstlisting}[style=promptstyle]
+Vast golden desert landscape at warm afternoon light, endless rolling sand dunes stretching to the horizon, gentle wind lifting wisps of sand into the air, delicate sand particles drifting across the scene, a shimmering oasis with palm trees visible in the far distance, a caravan of camels with riders traveling in the background slightly out of focus, in the foreground center a single majestic camel with ornate saddle and decorative blankets standing ready with no rider, the camel's mane and saddle fabric gently blowing in the breeze, soft desert haze, heat shimmer effect, dramatic shadows on dunes, wide panoramic view, landscape orientation, cinematic composition, 16:9 aspect ratio, 4K resolution, photorealistic, National Geographic style
+\end{lstlisting}
+
+\subsubsection{Medieval Town Prompt}
+
+\begin{lstlisting}[style=promptstyle]
+Epic medieval castle courtyard at sunset, imposing fortress with flying heraldic banners, grand ceremony in progress, two formations of knights in shining armor flanking a crimson carpet, a regal king presenting a royal proclamation scroll to an empty space before him, a noble warhorse with ornate medieval saddle and golden bridles standing ready beside the king awaiting its rider, herald trumpeters announcing the moment, torchlight reflecting off armor, medieval nobility watching, dramatic clouds in the sky, wide cinematic landscape composition, photorealistic, 16:9 aspect ratio, 4K resolution, Lord of the Rings style epic fantasy
+\end{lstlisting}
+
+\subsubsection{Futuristic City Prompt}
+
+\todo{Insert prompt after generation}
+
+\subsection{Intermediate Results}
+
+Table~\ref{tab:progress} shows the current progress of landscape generation.
+
+\begin{table}[H]
+\centering
+\caption{Landscape Generation Progress}
+\label{tab:progress}
+\begin{tabular}{|l|c|l|p{3.5cm}|}
+\hline
+\textbf{World} & \textbf{Status} & \textbf{File} & \textbf{Hero Spot} \\
+\hline
+Jungle & Complete & jungle\_1.png & Stone plateau \\
+Desert & Complete & desert\_1.png & Empty camel saddle \\
+Medieval & Complete & medieval\_1.png & Awaiting rider (horse) \\
+Futuristic & Pending & — & TBD \\
+\hline
+\end{tabular}
+\end{table}
+
+% ============================================
+% 4. RESULTS
+% ============================================
+\section{Results}
+
+\subsection{Final Images}
+
+\subsubsection{Jungle Landscape}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\linewidth]{images/jungle_1.png}
+\caption{Jungle world landscape with stone plateau and lion. Generated with Seedream 4.5 via lovart.ai.}
+\label{fig:jungle}
+\end{figure}
+
+\textbf{World:} Jungle\\
+\textbf{Tool(s) Used:} Seedream 4.5 (lovart.ai)\\
+\textbf{Description:} Dense tropical jungle scene featuring golden sunbeams piercing through the canopy, creating dramatic god rays. A mossy stone plateau in the center serves as the designated hero spot. A lion sits beside the stone, gazing upward, creating a natural focal point for where the hero will stand.
+
+\subsubsection{Desert Landscape}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\linewidth]{images/desert_1.png}
+\caption{Desert world landscape with camel and distant oasis. Generated with Seedream 4.5 via lovart.ai.}
+\label{fig:desert}
+\end{figure}
+
+\textbf{World:} Desert\\
+\textbf{Tool(s) Used:} Seedream 4.5 (lovart.ai)\\
+\textbf{Description} Vast golden desert with rolling sand dunes, an oasis visible in the distance, and a caravan in the background. A single camel with ornate saddle stands ready in the foreground — the empty saddle serves as the hero spot where the character will be placed.
+
+\subsubsection{Medieval Town}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\linewidth]{images/medieval_1.png}
+\caption{Medieval castle courtyard ceremony with knights, king, and awaiting warhorse. Generated with Seedream 4.5 via lovart.ai.}
+\label{fig:medieval}
+\end{figure}
+
+\textbf{World:} Medieval Town\\
+\textbf{Tool(s) Used:} Seedream 4.5 (lovart.ai)\\
+\textbf{Description:} Epic castle courtyard at sunset featuring two formations of knights in shining armor flanking a crimson carpet. A king presents a royal proclamation while a noble warhorse with ornate saddle awaits its rider — the hero spot for character insertion.
+
+\subsubsection{Futuristic City}
+
+\todo{Add after generation}
+
+\subsection{Visual Story Summary}
+
+\todo{Write a narrative connecting all images after completion}
+
+% ============================================
+% 5. ANALYSIS & COMPARISON
+% ============================================
+\section{Analysis \& Comparison}
+
+\subsection{Tool Comparison Matrix}
+
+Table~\ref{tab:comparison} presents a comparative analysis of the three AI tools used in this project.
+
+\begin{table}[H]
+\centering
+\caption{Tool Comparison Matrix (Rating: 1-5)}
+\label{tab:comparison}
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Criteria} & \textbf{Seedream} & \textbf{Nano Banana} & \textbf{Flux} \\
+\hline
+Quality & \todo{1-5} & \todo{1-5} & \todo{1-5} \\
+Speed & \todo{1-5} & \todo{1-5} & \todo{1-5} \\
+Consistency & \todo{1-5} & \todo{1-5} & \todo{1-5} \\
+Creativity & \todo{1-5} & \todo{1-5} & \todo{1-5} \\
+Ease of Use & \todo{1-5} & \todo{1-5} & \todo{1-5} \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Strengths and Weaknesses}
+
+\textbf{Seedream 4.5:}
+\begin{itemize}
+    \item \todo{List strengths and weaknesses based on experience}
+\end{itemize}
+
+\textbf{Nano Banana:}
+\begin{itemize}
+    \item \todo{List strengths and weaknesses based on experience}
+\end{itemize}
+
+\textbf{Flux Kontext:}
+\begin{itemize}
+    \item \todo{List strengths and weaknesses based on experience}
+\end{itemize}
+
+\subsection{Issues Encountered}
+
+\todo{Document any problems encountered and how they were resolved}
+
+\subsection{Character Consistency Analysis}
+
+\todo{Analyze how well each tool maintained the hero's appearance across different worlds}
+
+% ============================================
+% 6. CONCLUSIONS
+% ============================================
+\section{Conclusions}
+
+\subsection{Lessons Learned}
+
+\begin{itemize}
+    \item \todo{Key lesson 1}
+    \item \todo{Key lesson 2}
+    \item \todo{Key lesson 3}
+\end{itemize}
+
+\subsection{Best Practices Identified}
+
+\begin{itemize}
+    \item \todo{Best practice 1}
+    \item \todo{Best practice 2}
+\end{itemize}
+
+\subsection{Ideas for Extensions}
+
+\begin{itemize}
+    \item Add more world environments (underwater, space, etc.)
+    \item Create animation sequences between worlds
+    \item Develop hybrid workflows combining multiple tools
+    \item \todo{Your own extension ideas}
+\end{itemize}
+
+% ============================================
+% REFERENCES
+% ============================================
+\begin{thebibliography}{00}
+
+\bibitem{seedream} 
+ByteDance, ``Seedream 4.5 - AI Image Generation,'' 2025. [Online]. Available: \url{https://seed.bytedance.com/en/seedream4_0}
+
+\bibitem{lovart} 
+lovart.ai, ``Seedream 4.5 Access Platform,'' 2025. [Online]. Available: \url{https://lovart.ai}
+
+\bibitem{nanobanana} 
+Nano Banana, ``AI Image Editing Platform,'' 2025. [Online]. Available: \url{https://nanobanana.ai/}
+
+\bibitem{fluxkontext} 
+Flux Kontext, ``Context-Aware Image Editing,'' 2025. [Online]. Available: \url{https://flux-context.org/}
+
+\end{thebibliography}
+
+\end{document}

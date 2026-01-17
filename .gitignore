@@ -1,0 +1,29 @@
+# LaTeX build files
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+
+# Keep PDF in pdf folder but ignore temp files
+project/docs/*.aux
+project/docs/*.log
+project/docs/*.out
+
+# Temp files
+*_temp.tex
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
