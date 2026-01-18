@@ -1,5 +1,14 @@
 # GPS Project: The Hero in Four Worlds
 
+## 🚀 Quick Links
+- [**Final Documentation PDF**](project/docs/pdf/GPS_Project_Documentation.pdf)
+- [**Presentation Slides PDF**](project/docs/pdf/GPS_Presentation.pdf)
+- [**Project Links PDF**](project/docs/pdf/Project_Links.pdf)
+
+> [!TIP]
+> **For the best viewing experience on GitHub:** Please click the **"Download raw file"** button when viewing the PDFs to see them in high resolution/original quality.
+
+
 ## 📁 Project Structure
 
 ```
