@@ -636,32 +636,11 @@ See Figure~\ref{fig:cyberpunk_hero}.
 
 This section compares in-context editing capabilities between Flux-2 Pro and Nano Banana using the same prompt on the cyberpunk scene.
 
-\subsubsection{Edit Prompts Used}
+\subsubsection{Edit Objective}
 
-The in-context editing phase utilized specific prompts designed to add story-critical elements while strictly maintaining the hero's identity and background integrity. Detailed prompts for all four worlds (Cyberpunk, Medieval, Jungle, and Desert) are documented in Section~\ref{sec:incontextprompts}.
+The primary objective of this in-context edit was to add a story-critical element—a holographic lion spirit projection emanating from the character's ring—while strictly preserving the hero's identity, clothing, and background environment. The comparison evaluates how each tool handles the integration of new, translucent elements and lighting effects without altering the existing high-resolution source image.
 
-For the direct tool comparison focused on in this section (Cyberpunk Hologram), the following prompt was applied:
-
-\begin{lstlisting}[style=promptstyle]
-CRITICAL: DO NOT MODIFY THE CHARACTER'S APPEARANCE, FACE, BODY, CLOTHING, 
-OR POSITION. Keep all character features EXACTLY as they are.
-DO NOT change the background or city elements.
-
-ONLY ADD: A holographic lion projection from the character's ring.
-
-Character's left hand raised in front of him, palm facing up. 
-From the BLACK RING on his left index finger, a glowing holographic 
-LION is projected - a majestic blue-cyan hologram of a lion resembling 
-the one from the jungle, made of translucent glowing light particles 
-and geometric wireframe lines. The hologram lion is visible and prominent, 
-floating above the ring, looking powerful and alert.
-
-The hologram casts soft blue light on character's face and hand.
-Futuristic AR tech visualization, cyberpunk aesthetic.
-
-ONLY ADD the holographic lion element.
-Photorealistic integration.
-\end{lstlisting}
+Detailed prompts for this and other world edits are documented in Section~\ref{sec:incontextprompts}.
 
 \subsubsection{Flux-2 Pro Result}
 
