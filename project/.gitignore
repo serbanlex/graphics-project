@@ -1,0 +1,18 @@
+# LaTeX auxiliary files
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.gz
+*.synctex.gz
+
+# PDF output is usually kept in the pdf/ folder
+# but we might want to ignore intermediate ones if needed.
+# For now, we only ignore the junk.
