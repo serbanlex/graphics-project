@@ -5,47 +5,63 @@
 ```
 project/
 └── docs/
-    ├── GPS_Project_Documentation.md    ← Main IEEE-style documentation
-    ├── PPT_Structure.md                 ← PowerPoint slide guide
-    └── images/                          ← Store your AI-generated images here
+    ├── GPS_Project_Documentation.tex   ← IEEE-style LaTeX documentation
+    ├── GPS_Presentation.tex            ← Beamer presentation (Metropolis theme)
+    ├── PPT_Structure.md                ← PowerPoint slide guide
+    ├── pdf/                            ← Compiled PDF outputs
+    └── images/                         ← AI-generated images
 ```
+
+## 🔧 Compilation Commands
+
+Navigate to the `project/docs` folder and run:
+
+```bash
+# Compile documentation
+pdflatex -output-directory=pdf -interaction=nonstopmode GPS_Project_Documentation.tex
+
+# Compile presentation
+pdflatex -output-directory=pdf -interaction=nonstopmode GPS_Presentation.tex
+```
+
+**Note:** Run twice for cross-references to resolve correctly.
 
 ## 📋 Deliverables Checklist
 
 ### Documentation (20%)
-- [ ] Cover page completed
-- [ ] Introduction with theme, purpose, objectives
-- [ ] Tools overview (Seedream 4.0, Nano Banana, Flux Kontext)
-- [ ] Methodology with workflow and prompts
-- [ ] Results with 7-10 final images
-- [ ] Analysis & comparison of tools
-- [ ] Conclusions with lessons learned
-- [ ] References
+- [x] Cover page completed
+- [x] Introduction with theme, purpose, objectives
+- [x] Tools overview (Seedream 4.5, Nano Banana, Flux-2 Pro)
+- [x] Methodology with workflow and prompts
+- [x] Results with hero composites in all 4 worlds
+- [x] In-context editing comparison (Flux-2 vs Nano Banana)
+- [x] Analysis & comparison of tools
+- [x] Conclusions with lessons learned
+- [x] References
 
-### PowerPoint Presentation (20%)
-- [ ] 6-10 slides created
-- [ ] Each slide has image + short explanation
-- [ ] 3-5 minute online presentation prepared
+### Beamer Presentation (20%)
+- [x] 13 slides created (Metropolis theme)
+- [x] Each slide has image + explanation
+- [x] In-context editing comparisons included
 
 ### Technical Correctness (15%)
-- [ ] Seedream 4.0 used
-- [ ] Nano Banana used
-- [ ] Flux Kontext used
-- [ ] Prompts documented
+- [x] Seedream 4.5 used (backgrounds)
+- [x] Nano Banana used (compositing)
+- [x] Flux-2 Pro used (in-context editing)
+- [x] All prompts documented
 
 ### Creativity (45%)
-- [ ] Consistent hero character designed
-- [ ] 4 distinct worlds created (Jungle, Medieval, Futuristic, Desert)
-- [ ] Visual story is compelling and cohesive
+- [x] Consistent hero character designed
+- [x] 4 distinct worlds created (Jungle, Medieval, Desert, Cyberpunk)
+- [x] Visual story is compelling and cohesive
 
 ## 🔗 Tools Links
 
-- **Seedream 4.0:** https://seed.bytedance.com/en/seedream4_0
-- **Nano Banana:** https://nanobanana.ai/
+- **Seedream 4.5:** https://seed.bytedance.com/en/seedream4_5
+- **Nano Banana (Gemini):** https://gemini.google.com/
 - **Flux Kontext:** https://flux-context.org/
+- **lovart.ai:** https://lovart.ai (free access to Seedream & Flux)
 
-## ⏰ Deadline Options
+## ⏰ Deadline
 
-- Week 12: December 16
-- Week 13: January 13
-- Week 14: January 20 ← (current week)
+- Week 14: January 20, 2026
