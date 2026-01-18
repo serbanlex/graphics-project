@@ -208,9 +208,45 @@ Table~\ref{tab:toolorder} shows the sequential order in which tools were applied
 
 This section documents the prompts used for each generation, following the Seedream 4.5 best practices: Subject + Environment + Style + Technical Specs.
 
-\subsubsection{Hero Character Base Prompt}
+\subsubsection{Hero Character Reference Prompt}
 
-\todo{Insert hero character prompt after generation}
+The hero character was designed as a consistent reference sheet showing multiple angles for use with Nano Banana's character insertion capabilities. Table~\ref{tab:herotraits} summarizes the distinctive character traits.
+
+\begin{table}[H]
+\centering
+\caption{Hero Character Traits}
+\label{tab:herotraits}
+\begin{tabular}{|l|p{6cm}|}
+\hline
+\textbf{Attribute} & \textbf{Description} \\
+\hline
+Inspiration & Timoth\'{e}e Chalamet \\
+Age & 20-25 years old \\
+Build & Athletic lean, approx. 180cm \\
+Face & Sharp jawline, high cheekbones \\
+Eyes & Deep-set, hazel-green, expressive \\
+Eyebrows & Thick, dark, natural arch \\
+Nose & Straight, refined \\
+Hair & Dark brown-black, slicked back \\
+Facial Hair & Well-groomed short goatee \\
+Skin & Medium tone, warm undertones \\
+Tattoo & Visible on right forehand \\
+Accessory & Black ring on left index finger \\
+Expression & Intense, confident gaze \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{lstlisting}[style=promptstyle]
+Character reference sheet of a handsome young man age 20-25, Timothee Chalamet inspired features, DISTINCTIVE FACE with sharp defined jawline, high prominent cheekbones, deep-set expressive hazel-green eyes, thick dark eyebrows with natural arch, straight refined nose, full lips, medium skin tone with subtle warm undertones, dark brown-black slightly longer hair slicked back, well-groomed short goatee, visible tattoo on his right forehand, athletic lean build not overly muscular approximately 180cm tall, black ring on the left hand's index finger, intense confident gaze, wearing simple neutral gray t-shirt and pants, showing FRONT VIEW, SIDE VIEW, THREE-QUARTER VIEW, and BACK VIEW arranged in a row, character turnaround sheet, full body poses, clean white background, consistent lighting across all angles, photorealistic, 4K resolution, highly detailed facial features for character consistency, professional character design reference sheet
+\end{lstlisting}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\linewidth]{images/hero_reference.png}
+\caption{Hero character reference sheet showing front, side, 3/4, and back views for consistency. Generated with Seedream 4.5 via lovart.ai.}
+\label{fig:hero}
+\end{figure}
 
 \subsubsection{Jungle World Prompt}
 
