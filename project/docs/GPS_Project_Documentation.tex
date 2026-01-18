@@ -383,6 +383,90 @@ QUALITY REQUIREMENTS:
 - 4K output resolution
 \end{lstlisting}
 
+\subsubsection{In-Context Editing Prompts}
+\label{sec:incontextprompts}
+
+These prompts were used to perform local modifications to the hero composites, focusing on specific story elements while preserving character identity.
+
+\textbf{Cyberpunk Hologram Lion (Flux-2 Pro \& Nano Banana):}
+\begin{lstlisting}[style=promptstyle]
+CRITICAL: DO NOT MODIFY THE CHARACTER'S APPEARANCE, FACE, BODY, CLOTHING, 
+OR POSITION. Keep all character features EXACTLY as they are.
+DO NOT change the background or city elements.
+
+ONLY ADD: A holographic lion projection from the character's ring.
+
+Character's left hand raised in front of him, palm facing up. 
+From the BLACK RING on his left index finger, a glowing holographic 
+LION is projected - a majestic blue-cyan hologram of a lion resembling 
+the one from the jungle, made of translucent glowing light particles 
+and geometric wireframe lines. The hologram lion is visible and prominent, 
+floating above the ring, looking powerful and alert.
+
+The hologram casts soft blue light on character's face and hand.
+Futuristic AR tech visualization, cyberpunk aesthetic.
+
+ONLY ADD the holographic lion element.
+Photorealistic integration.
+\end{lstlisting}
+
+\textbf{Desert Ghost Lion (Flux-2 Pro \& Nano Banana):}
+\begin{lstlisting}[style=promptstyle]
+CRITICAL: DO NOT MODIFY THE CHARACTER'S APPEARANCE, FACE, BODY, OR POSITION.
+Keep all character features and background EXACTLY as they are.
+
+ONLY ADD: A translucent ghostly/holographic lion walking alongside the camel
+in the desert sand. The lion appears as a faint blue-cyan spirit projection
+emanating from the ring on hero's left hand - like a loyal spirit guide.
+
+The ghost lion should be subtle but visible, made of light particles,
+matching the hologram aesthetic from the cyberpunk scene.
+The hero may glance down at the spirit companion with a knowing look.
+Photorealistic integration, mystical desert atmosphere.
+\end{lstlisting}
+
+\textbf{Jungle Ring Origin (Flux-2 Pro \& Nano Banana):}
+\begin{lstlisting}[style=promptstyle]
+CRITICAL: DO NOT MODIFY THE CHARACTER'S APPEARANCE, FACE, BODY, OR POSITION.
+Keep all character features and background EXACTLY as they are.
+
+ONLY ADD: A mystical glowing energy around the hero's left hand, with a 
+magical beam of light placing the BLACK RING onto his index finger. 
+Ancient jungle spirits or golden energy particles surrounding the moment.
+The lion watching this sacred ritual with knowing eyes.
+
+The ring should glow with the same blue-cyan energy that appears in the 
+cyberpunk hologram scene - establishing visual continuity.
+Mystical jungle magic aesthetic, photorealistic integration
+\end{lstlisting}
+
+\textbf{Medieval Rearing Horse (Flux-2 Pro \& Nano Banana):}
+\begin{lstlisting}[style=promptstyle]
+CRITICAL: DO NOT MODIFY THE CHARACTER'S APPEARANCE, FACE, ARMOR, OR FEATURES.
+Keep hero's face, hair, goatee, and all distinctive traits EXACTLY as they are.
+DO NOT change the background, crowds, princess, or opponent knight.
+
+MODIFY ONLY: The white horse's pose and hero's arm position.
+
+Change the white horse to a REARING POSE - front legs raised dramatically 
+in the air, powerful stance on hind legs, heroic battle moment.
+The hero remains mounted, keeping his balance on the rearing horse.
+Hero's right arm raised HIGH holding the jousting lance/sword triumphantly 
+toward the sky, victorious battle pose.
+
+Hero maintains fierce determined expression, looking forward at opponent.
+Horse's mane flowing dramatically with the motion.
+Dust kicking up from the horse's hind hooves.
+Epic medieval tournament moment, dramatic and powerful.
+
+DO NOT:
+- Change hero's face, armor design, or body features
+- Modify background elements (arena, crowds, princess, opponent)
+- Alter image quality or lighting style
+
+Photorealistic, cinematic medieval fantasy composition.
+\end{lstlisting}
+
 \subsection{Intermediate Results}
 
 Table~\ref{tab:progress} shows the current progress of landscape generation.
@@ -552,7 +636,11 @@ See Figure~\ref{fig:cyberpunk_hero}.
 
 This section compares in-context editing capabilities between Flux-2 Pro and Nano Banana using the same prompt on the cyberpunk scene.
 
-\subsubsection{Edit Prompt Used}
+\subsubsection{Edit Prompts Used}
+
+The in-context editing phase utilized specific prompts designed to add story-critical elements while strictly maintaining the hero's identity and background integrity. Detailed prompts for all four worlds (Cyberpunk, Medieval, Jungle, and Desert) are documented in Section~\ref{sec:incontextprompts}.
+
+For the direct tool comparison focused on in this section (Cyberpunk Hologram), the following prompt was applied:
 
 \begin{lstlisting}[style=promptstyle]
 CRITICAL: DO NOT MODIFY THE CHARACTER'S APPEARANCE, FACE, BODY, CLOTHING, 
