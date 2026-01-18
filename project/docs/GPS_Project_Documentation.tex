@@ -410,6 +410,73 @@ This section presents the final composited images where the hero character has b
 \textbf{Tool Used:} Nano Banana\\
 \textbf{Note:} Enhanced prompt used to maintain photorealistic quality and avoid stylized/drawn appearance.
 
+\subsection{In-Context Editing Comparison}
+
+This section compares in-context editing capabilities between Flux-2 Pro and Nano Banana using the same prompt on the cyberpunk scene.
+
+\subsubsection{Edit Prompt Used}
+
+\begin{lstlisting}[style=promptstyle]
+CRITICAL: DO NOT MODIFY THE CHARACTER'S APPEARANCE, FACE, BODY, CLOTHING, 
+OR POSITION. Keep all character features EXACTLY as they are.
+DO NOT change the background or city elements.
+
+ONLY ADD: A holographic lion projection from the character's ring.
+
+Character's left hand raised in front of him, palm facing up. 
+From the BLACK RING on his left index finger, a glowing holographic 
+LION is projected - a majestic blue-cyan hologram of a lion resembling 
+the one from the jungle, made of translucent glowing light particles 
+and geometric wireframe lines. The hologram lion is visible and prominent, 
+floating above the ring, looking powerful and alert.
+
+The hologram casts soft blue light on character's face and hand.
+Futuristic AR tech visualization, cyberpunk aesthetic.
+
+ONLY ADD the holographic lion element.
+Photorealistic integration.
+\end{lstlisting}
+
+\subsubsection{Flux-2 Pro Result}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\linewidth]{images/in-context-editing/flux-2/cyberpunk.jpg}
+\caption{Cyberpunk scene with holographic lion edit using Flux-2 Pro.}
+\label{fig:flux_edit}
+\end{figure}
+
+\textbf{Observations:} Resolution maintained at high quality. Hologram placement less intuitive but output remains crisp and detailed.
+
+\subsubsection{Nano Banana Result}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\linewidth]{images/in-context-editing/nano-banana/cyberpunk.png}
+\caption{Cyberpunk scene with holographic lion edit using Nano Banana.}
+\label{fig:nano_edit}
+\end{figure}
+
+\textbf{Observations:} Hologram positioning more logical and natural. However, some resolution/quality reduction observed compared to Flux-2 Pro output.
+
+\subsubsection{In-Context Editing Summary}
+
+\begin{table}[H]
+\centering
+\caption{In-Context Editing Comparison}
+\label{tab:incontext}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Criteria} & \textbf{Flux-2 Pro} & \textbf{Nano Banana} \\
+\hline
+Resolution Quality & Better & Reduced \\
+Hologram Positioning & Less intuitive & More logical \\
+Character Preservation & Good & Good \\
+Background Preservation & Good & Good \\
+\hline
+\end{tabular}
+\end{table}
+
 \subsection{Visual Story Summary}
 
 \todo{Write a narrative connecting all images after completion}
