@@ -566,7 +566,7 @@ Overall Winner & \textbf{Recommended} & Good alternative \\
 
 \subsection{Visual Story Summary}
 
-\todo{Write a narrative connecting all images after completion}
+The hero's journey begins in the primordial jungle, where atop a sunlit stone plateau, he receives a mystical ring from ancient spirits while a lion watches with knowing eyes. Empowered by this artifact, he travels to a medieval kingdom where he becomes a knight champion, facing opponents in jousting tournaments with fierce determination. His adventures continue through the scorching desert, riding camelback with the spirit of his lion companion manifesting from the ring as a ghostly guide. Finally, in the distant future, he stands on a cyberpunk rooftop overlooking a neon-lit megacity, the lion now appearing as a holographic projection from his ring — a luminous memory of where his journey began.
 
 % ============================================
 % 5. ANALYSIS & COMPARISON
@@ -585,11 +585,11 @@ Table~\ref{tab:comparison} presents a comparative analysis of the three AI tools
 \hline
 \textbf{Criteria} & \textbf{Seedream} & \textbf{Nano Banana} & \textbf{Flux} \\
 \hline
-Quality & \todo{1-5} & \todo{1-5} & \todo{1-5} \\
-Speed & \todo{1-5} & \todo{1-5} & \todo{1-5} \\
-Consistency & \todo{1-5} & \todo{1-5} & \todo{1-5} \\
-Creativity & \todo{1-5} & \todo{1-5} & \todo{1-5} \\
-Ease of Use & \todo{1-5} & \todo{1-5} & \todo{1-5} \\
+Quality & 5 & 3 & 5 \\
+Speed & 5 & 3 & 5 \\
+Consistency & 5 & 3 & 4 \\
+Creativity & 5 & 3 & 5 \\
+Ease of Use & 4 & 3 & 4 \\
 \hline
 \end{tabular}
 \end{table}
@@ -598,26 +598,58 @@ Ease of Use & \todo{1-5} & \todo{1-5} & \todo{1-5} \\
 
 \textbf{Seedream 4.5:}
 \begin{itemize}
-    \item \todo{List strengths and weaknesses based on experience}
+    \item Excellent photorealistic quality for landscape generation
+    \item Very consistent outputs matching prompt specifications
+    \item Best tool for initial background/scene creation
+    \item Fast generation times
 \end{itemize}
 
 \textbf{Nano Banana:}
 \begin{itemize}
-    \item \todo{List strengths and weaknesses based on experience}
+    \item Good for character compositing and insertion tasks
+    \item More logical and intuitive element positioning
+    \item Quality and resolution reduction observed in outputs
+    \item Slight cartoonization of photorealistic source images
+    \item Often changes angles/positions, requiring multiple prompt retries
 \end{itemize}
 
-\textbf{Flux Kontext:}
+\textbf{Flux-2 Pro:}
 \begin{itemize}
-    \item \todo{List strengths and weaknesses based on experience}
+    \item Excellent resolution and quality preservation
+    \item Creative interpretation of in-context editing prompts
+    \item Best overall in-context editing quality
+    \item Sometimes alters character identity (extra limbs, facial changes)
+    \item Edit positioning can be less intuitive than expected
 \end{itemize}
 
 \subsection{Issues Encountered}
 
-\todo{Document any problems encountered and how they were resolved}
+\begin{enumerate}
+    \item \textbf{Resolution drop during Nano Banana compositing:} The first hero composite (desert scene) exhibited noticeably lower resolution compared to the original Seedream-generated background.
+    
+    \item \textbf{Character identity changes in Flux-2 edits:} Desert and jungle in-context edits altered the hero's appearance significantly, including an extra arm artifact in the jungle scene and facial changes in the desert scene.
+    
+    \item \textbf{Angle/position changes in Nano Banana:} The tool frequently modified camera angles and element positions despite explicit instructions to preserve the background exactly, requiring multiple prompt retries.
+    
+    \item \textbf{Quality stylization in Nano Banana:} Photorealistic source images became slightly cartoonish after processing, losing some of the original photorealism.
+\end{enumerate}
+
+\textbf{Solutions Applied:}
+\begin{itemize}
+    \item Enhanced prompts with explicit quality and resolution preservation instructions
+    \item Used Flux-2 Pro for quality-critical in-context edits
+    \item Multiple iterations to achieve acceptable results
+\end{itemize}
 
 \subsection{Character Consistency Analysis}
 
-\todo{Analyze how well each tool maintained the hero's appearance across different worlds}
+Character consistency proved to be an interesting challenge in this project. While Seedream 4.5 generated the initial hero reference sheet with highly distinctive features (sharp jawline, hazel-green eyes, goatee, slicked-back hair, tattoo, black ring), maintaining these features varied based on edit complexity.
+
+For simpler in-context edits, both tools performed well. The medieval rearing horse edit successfully preserved the hero's identity while changing the horse's pose — demonstrating that these tools can maintain character consistency when the requested changes are straightforward.
+
+However, more complex edits involving additional elements (holographic lions, mystical effects, spirit companions) caused both Nano Banana and Flux-2 Pro to alter the character's appearance more significantly. The desert ghost lion edit resulted in noticeable identity changes in both tools.
+
+\textbf{Key Finding:} Current AI in-context editing tools work well for simple pose/element changes but struggle with complex multi-element edits while preserving character identity. Simpler is better for consistency.
 
 % ============================================
 % 6. CONCLUSIONS
@@ -627,25 +659,32 @@ Ease of Use & \todo{1-5} & \todo{1-5} & \todo{1-5} \\
 \subsection{Lessons Learned}
 
 \begin{itemize}
-    \item \todo{Key lesson 1}
-    \item \todo{Key lesson 2}
-    \item \todo{Key lesson 3}
+    \item \textbf{Start with the best generation tool:} Seedream 4.5 produces the highest quality base images — invest time in getting the initial landscapes perfect before attempting compositing or editing.
+    
+    \item \textbf{Design ``hero spots'' intentionally:} Empty saddles, stone plateaus, and rooftop edges made character insertion much easier than trying to add characters to busy scenes. Plan for insertion during background generation.
+    
+    \item \textbf{Simpler edits = better consistency:} Complex in-context edits (adding multiple elements, special effects) often alter character identity. Keep edits focused and simple for best results.
+    
+    \item \textbf{Use explicit constraints in prompts:} Phrases like ``DO NOT MODIFY the character's appearance'' and ``KEEP BACKGROUND EXACTLY AS IS'' significantly improved results. The more specific and emphatic the constraints, the better the tools respected them.
 \end{itemize}
 
 \subsection{Best Practices Identified}
 
 \begin{itemize}
-    \item \todo{Best practice 1}
-    \item \todo{Best practice 2}
+    \item Create detailed character reference sheets with multiple angles before starting any compositing work
+    \item Use explicit ``DO NOT MODIFY'' instructions in prompts to protect background and character elements from unwanted changes
+    \item Test complex edits in multiple tools (both Flux-2 and Nano Banana) and compare results before finalizing
+    \item Build scenes with intentional insertion points (empty spaces, waiting mounts) for easier character compositing
 \end{itemize}
 
 \subsection{Ideas for Extensions}
 
 \begin{itemize}
-    \item Add more world environments (underwater, space, etc.)
-    \item Create animation sequences between worlds
-    \item Develop hybrid workflows combining multiple tools
-    \item \todo{Your own extension ideas}
+    \item Add more world environments (underwater, space, post-apocalyptic, etc.)
+    \item Create animation sequences transitioning between worlds
+    \item Develop hybrid workflows combining multiple tools for optimal results
+    \item Explore video generation tools for animated storytelling
+    \item Test newer AI models as they release for improved character consistency
 \end{itemize}
 
 % ============================================
